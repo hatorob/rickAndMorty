@@ -28,6 +28,8 @@
 
 .btn:hover {
     cursor: pointer;
+    color: #218c74; 
+
 }
 
 .headerCard {
