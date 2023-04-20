@@ -32,8 +32,6 @@ function App() {
    //! lo dejamos comentando para entender lo que se esta haciendo!
  */
 
-   //|| personaje.id !== Number(id)
-
    const onSearch = (id) => {
       //console.log("id",id);
       //id = 1;
@@ -56,7 +54,7 @@ function App() {
    const onClose = (id) => {
       
       setCharacters([
-         ...characters.filter( personajeEliminar => personajeEliminar.id !== Number(id))
+         characters.filter( personajeEliminar => personajeEliminar.id !== Number(id))
       ])
    }
    
