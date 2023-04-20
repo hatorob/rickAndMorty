@@ -11,6 +11,7 @@ export default function Cards({characters, onClose}) {
                return (
                   <Card onClose={onClose}
                         key={personaje.id} 
+                        id={personaje.id}
                         name={personaje.name} 
                         status={personaje.status}
                         species={personaje.species}

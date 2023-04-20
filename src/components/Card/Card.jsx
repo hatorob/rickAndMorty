@@ -5,12 +5,12 @@ import {faDeleteLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 
-export default function Card({name, status, species, gender, origin, image, onClose}) {
+export default function Card({name, status, species, gender, origin, image, onClose, id}) {
    return (
       <div className={style.container} style={{ backgroundImage: `url(${image})`, backgroundRepeat: 'no-repeat', opacity: '0.95' }}>
          <div className={style.headerCard}>
             <span className={style.status}> {status} </span>
-            <FontAwesomeIcon onClick={onClose} icon={faDeleteLeft} className={style.btn}/>
+            <FontAwesomeIcon onClick={ () => onClose(id) } icon={faDeleteLeft} className={style.btn}/>
          </div>
          <div>
 
