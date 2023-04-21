@@ -65,10 +65,17 @@ h2 {
     background-color: rgba(134,15,47,0.9);
     font-size: 30px;
     margin: 80px 0 0 0;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 10px 10px;
     color: #f5f5f5;
 }
 
+h2:hover {
+    background-color: rgba(255,255,255,1);
+    color: rgba(134,15,47,0.9);
+}
 
 
+.link {
+    text-decoration: none;
+}
 

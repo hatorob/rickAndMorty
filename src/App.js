@@ -2,10 +2,13 @@ import './App.css';
 //import Card from './components/Card/Card.jsx';
 import Cards from './components/Cards/Cards.jsx';
 import Navbar from './components/Navbar/Navbar';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+
 /* import characters, { Rick } from './data.js'; */ //se elimina
 import { useState } from 'react';
 import axios from 'axios';
-
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -54,7 +57,7 @@ function App() {
    const onClose = (id) => {
       
       setCharacters([
-         characters.filter( personajeEliminar => personajeEliminar.id !== Number(id))
+         ...characters.filter( personajeEliminar => personajeEliminar.id !== Number(id))
       ])
    }
    
@@ -62,10 +65,14 @@ function App() {
    return (
       <div className='App'>
          <div>
-            {/* //!a nuestro Navbar component le estamos pasando la función onSeacth, para que esta se la pase a SearchBar y esta desde el botón vaya agregando la carta */}
             <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} />
+            {/* //!a nuestro Navbar component le estamos pasando la función onSeacth, para que esta se la pase a SearchBar y esta desde el botón vaya agregando la carta */}
+            <Routes>
+               <Route path='/home' element={ <Cards characters={characters} onClose={onClose} /> }/>
+               <Route path='/about' element={ <About /> }/>
+               <Route path='/detail/:id' element={ <Detail /> }/>
+            </Routes>
          </div>
-         <Cards characters={characters} onClose={onClose} />
       </div>
    );
 }
