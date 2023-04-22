@@ -1,0 +1,118 @@
+.container {
+    margin: 60px auto;
+    width: 60%;
+    background-color: rgba(0,179,254,0.18);
+    border-radius: 100px;
+}
+
+
+.containerAbout {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 50px;
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.85);
+    border: 2px solid #871533;
+}
+
+.description {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 100px 1fr;
+    /* grid-template-columns: 1fr 80px 1fr; */
+    grid-template-areas: "img img name name name"
+                         "career career career career career"
+                         "skills skills skills skills skills";
+    grid-gap: 10px;
+}
+
+.img {
+    grid-area: img;
+    width: 140px;
+    height: 140px;
+    background-image: url(../../img/me.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #871533;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.name {
+    grid-area: name;
+}
+
+.career {
+    grid-area: career;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.h1 {
+    font-size: 30px;
+    color: #871533;
+}
+.name, .career, .skills, p {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: #871533;
+}
+
+.items {
+   width: 120px; 
+   margin: 20px auto;
+   padding: 5px 10px;
+   border-bottom: 2px dashed #871533;
+   border-radius: 20px;
+}
+
+.value {
+   width: 100%; 
+   margin: 0 auto;
+   padding: 5px 10px;
+   border-radius: 20px;
+}
+
+hr {
+    background-color: #871533;
+}
+
+.containerSkills {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    font-size: 50px;
+}
+
+
+.html {
+    color: #DD4B25;
+}
+
+.css {
+    color: #254BDD;
+}
+
+.js {
+    color: #EFD81D;
+}
+
+.react {
+    color: #5DD0EF;
+}
+
+.node {
+    color: #71B156;
+}
+
+.php {
+    color: black;
+}
