@@ -1,0 +1,60 @@
+.container {
+    margin: 100px auto;
+    width: 400px;
+    height: 530px;
+    background-color: rgba(208,110,145,0.9);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img {
+    width: 230px;
+    height: 230px;
+    margin: 10px auto;
+    background-image: url('../../img/rick.jpeg');
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.form label {
+    text-transform: uppercase;
+}
+
+.form input {
+    font-family: 'Rubik Wet Paint', cursive;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form button {
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-family: 'Rubik Wet Paint', cursive;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.alert {
+    border-radius: 10px;
+    color: rgba(134,15,47,1);
+    font-size: 15px;
+}
