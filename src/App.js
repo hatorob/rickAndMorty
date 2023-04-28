@@ -10,6 +10,7 @@ import Form from './components/Form/Form';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Favorite from './components/Favorites/Favorites';
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
                <Route path='/home' element={ <Cards characters={characters} onClose={onClose} /> }/>
                <Route path='/about' element={ <About /> }/>
                <Route path='/detail/:id' element={ <Detail /> }/>
+               <Route path='/favorites' element={ <Favorite /> }/>
             </Routes>
          </div>
       </div>

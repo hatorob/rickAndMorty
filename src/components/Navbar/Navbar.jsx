@@ -18,6 +18,9 @@ const Navbar = ( {onSearch, onSearchRandom} ) => {
                     <NavLink to='/about' className={ ({isActive}) =>  (isActive ? style.active : undefined) }>
                         <button className={style.btn}>About</button>
                     </NavLink>
+                    <NavLink to='/favorites' className={ ({isActive}) =>  (isActive ? style.active : undefined) }>
+                        <button className={style.btn}>Favorites</button>
+                    </NavLink>
                 </div>
                 {/* //!Le pasamos onSearch que es una prop que viene del padre APP a SearchBar */}
                 <SearchBar onSearch={onSearch} onSearchRandom={onSearchRandom} />
