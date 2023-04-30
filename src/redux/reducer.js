@@ -20,7 +20,12 @@ const reducer = (state = initialState,{type,payload}) => {
                 myFavorites: state.myFavorites.filter( personaje => personaje.id !== Number(payload))
             }
         case FITLER:
-            const copyAllCharactersFilter = state.allCharacters.filter( personaje => personaje.gender === payload)
+            let copyAllCharactersFilter;
+            if(payload === "allCharacters") {
+                copyAllCharactersFilter = state.allCharacters;
+            } else {
+                copyAllCharactersFilter = state.allCharacters.filter( personaje => personaje.gender === payload);
+            }
             return {
                 ...state,
                 myFavorites: copyAllCharactersFilter
