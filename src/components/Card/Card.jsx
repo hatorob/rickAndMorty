@@ -42,9 +42,9 @@ function Card(props) {
             <div className={style.headerCard}>
             {
                isFav ? (
-                  <button onClick={handleFavorite}>❤️</button>
+                  <p className={style.btnLike} onClick={handleFavorite}>❤️</p>
                ) : (
-                  <button onClick={handleFavorite}>🤍</button>
+                  <p className={style.btnLike} onClick={handleFavorite}>🤍</p>
                )
             }
                <span className={style.status}> {status} </span>

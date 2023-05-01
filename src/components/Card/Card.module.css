@@ -79,3 +79,6 @@ h2:hover {
     text-decoration: none;
 }
 
+.btnLike:hover {
+    cursor: pointer;
+}
