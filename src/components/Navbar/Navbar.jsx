@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const Navbar = ( {onSearch, onSearchRandom} ) => {
+const Navbar = ( {onSearch, onSearchRandom, logout} ) => {
     return (
         <div className={style.containerNavbar}>
             <div>
@@ -24,6 +24,7 @@ const Navbar = ( {onSearch, onSearchRandom} ) => {
                 </div>
                 {/* //!Le pasamos onSearch que es una prop que viene del padre APP a SearchBar */}
                 <SearchBar onSearch={onSearch} onSearchRandom={onSearchRandom} />
+                <button className={style.btn} onClick={logout}>Logout</button>
             </div>
         </div>
     )
