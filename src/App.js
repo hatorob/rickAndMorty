@@ -85,7 +85,7 @@ function App() {
    const logout = () => {
          localStorage.removeItem('access');
          setAccess(false);
-         navigate('/rickAndMorty');
+         navigate('/');
    }
    
    useEffect( () => {
@@ -93,7 +93,7 @@ function App() {
       if(accessLocalStorage) {
          setAccess(true);
       } else {
-         !access && navigate('/rickAndMorty')
+         !access && navigate('/')
       }
 
    }, [access, navigate])
@@ -102,7 +102,7 @@ function App() {
       <div className='App'>
          <div>
             {
-               (location.pathname === '/rickAndMorty') ? <Form login={login} /> : null
+               (location.pathname === '/') ? <Form login={login} /> : null
             }
             {/* <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} /> */}
             {/* //!a nuestro Navbar component le estamos pasando la función onSeacth, para que esta se la pase a SearchBar y esta desde el botón vaya agregando la carta */}
@@ -132,7 +132,7 @@ function App() {
                      <Favorite /> 
                   </>
                }/>
-               <Route path='*' element={ <Error404 /> } />
+              {/*  <Route path='*' element={ <Error404 /> } /> */}
             </Routes>
          </div>
       </div>
