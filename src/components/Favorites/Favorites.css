@@ -2,7 +2,7 @@
 h4 {
     font-size: 40px;
     color: #861433;
-    margin-top: 30px 0 0 0;
+    margin: 30px 0 0 0;
     padding: 0;
 }
 
@@ -13,4 +13,15 @@ select {
     margin-right: 10px;
     border-radius: 20px;
     border: none;
+}
+
+@media screen and (max-width: 767px) {
+    h4 {
+        display: none;
+    }
+
+    select {
+        margin-top: 10px;
+    }
+
 }

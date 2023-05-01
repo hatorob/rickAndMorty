@@ -116,3 +116,46 @@ hr {
 .php {
     color: black;
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .skills {
+        margin-top: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .h1 {
+        font-size: 20px;
+    }
+    .description {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 0.4fr 1fr;
+        /* grid-template-columns: 1fr 80px 1fr; */
+        grid-template-areas: "img img name name name"
+                             "career career skills skills skills";
+        grid-gap: 10px;
+    }
+    .html {
+        display: none;
+    }
+    
+    .css {
+        display: none;
+    }
+    .php {
+        display: none;
+    }
+}

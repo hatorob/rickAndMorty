@@ -10,13 +10,25 @@ export default function SearchBar(props) {
    const handleChange = (e) => {
       setId(e.target.value)
    }
+
+   const handleClick = () => {
+      onSearch(id);
+      setId('');
+   }
+
+   const handleEnter = (e) => {
+      if(e.key === "Enter") {
+         onSearch(id);
+         setId('');
+      }
+   }
    //console.log("id",id);
    return (
       <div className={style.container}>
-         <input type='search' onChange={handleChange} value={id}/>
+         <input type='search' onChange={handleChange} value={id} onKeyUp={handleEnter}/>
          {/* //! le pasamos onSearch al span que actua como boton en onClick para que agregue las cards */}
          {/*  //! onClick={ () => onSearch(id) } -> debe ser un arrayFunction para poder pasarle a onSearch el id como parametro */}
-         <span className={style.p} onClick={ () => onSearch(id) }>Agregar</span>
+         <span className={style.p} onClick={ handleClick }>Agregar</span>
          <span className={style.p} onClick={ onSearchRandom }>Aleatorio</span>
       </div>
    );

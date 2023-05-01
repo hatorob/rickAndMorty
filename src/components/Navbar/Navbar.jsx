@@ -1,14 +1,19 @@
 import SearchBar from '../SearchBar/SearchBar';
 import style from './Navbar.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 
 const Navbar = ( {onSearch, onSearchRandom, logout} ) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/home');
+    } 
+
     return (
         <div className={style.containerNavbar}>
             <div>
-                <h1>Rick and Morty</h1> 
+                <h1 onClick={handleClick} className={style.title}>Rick and Morty</h1> 
             </div>
             <div className={style.containerNav}>
                 <div>

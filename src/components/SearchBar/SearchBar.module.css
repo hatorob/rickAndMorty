@@ -8,10 +8,12 @@
 
 
 input {
+    /* width: 100px; */
     border: none;
     border-radius: 7px;
     height: 35px;
 }
+
 
 .p {
     background-color: rgba(255,255,255,1);
@@ -29,4 +31,29 @@ input {
     cursor: pointer;
     background-color: #278B7B;
     color: rgba(255,255,255,1);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    input {
+        width: 80px;
+    }
+    .p {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .container {
+        flex-direction: column;
+        gap: 6px;
+    }
+    input {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .p {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
