@@ -52,7 +52,9 @@ function App() {
    const onSearch = (id) => {
       //console.log("id",id);
       //id = 1;
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+      //http://localhost:3001/rickandmorty/character/${id}
+      //https://rickandmortyapi.com/api/character/${id} --- Api
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             let repeat = characters.some( obj => obj.id === Number(id));
             (characters.length === 0 || !repeat) ? setCharacters((oldChars) => [...oldChars, data]) : alert('Id repetido')
