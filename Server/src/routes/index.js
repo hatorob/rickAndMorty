@@ -14,6 +14,6 @@ DELETE deleteFav: "/fav/:id"
 routers.get('/character/:id', getCharById);
 routers.get('/login', loginUsers);
 routers.post('/fav', postFav);
-routers.delete('fav/:id', deleteFav);
+routers.delete('/fav/:id', deleteFav);
 
 module.exports = routers;
