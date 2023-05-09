@@ -113,40 +113,18 @@ function App() {
       <div className='App'>
          <div>
             {
-               (location.pathname === '/') ? <Form login={login} /> : null
+               (location.pathname !== '/') ? <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} logout={logout}/> : null
             }
             {/* <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} /> */}
             {/* //!a nuestro Navbar component le estamos pasando la función onSeacth, para que esta se la pase a SearchBar y esta desde el botón vaya agregando la carta */}
             <Routes>
-               {/* <Route path='/' element={ <Form /> } /> */}
-               <Route path='/home' element={ 
-                  <>
-                     <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} logout={logout}/>
-                     <Cards characters={characters} onClose={onClose} /> 
-                  </>
-               }/>
-               <Route path='/about' element={ 
-                  <> 
-                     <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} logout={logout}/>
-                     <About /> 
-                  </> 
-               }/>
-               <Route path='/detail/:id' element={ 
-                  <>
-                     <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} logout={logout}/>
-                     <Detail /> 
-                  </>
-               }/>
-               <Route path='/favorites' element={ 
-                  <>
-                     <Navbar onSearch={onSearch} onSearchRandom={onSearchRandom} logout={logout}/>
-                     <Favorite /> 
-                  </>
-               }/>
+               <Route path='/' element={ <Form login={login} /> } />
+               <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
+               <Route path='/about' element={ <About /> }/>
+               <Route path='/detail/:id' element={ <Detail /> }/>
+               <Route path='/favorites' element={ <Favorite /> }/>
                <Route path='*' element={ <Error404 /> } />
             </Routes>
-            
-
          </div>
       </div>
    );
