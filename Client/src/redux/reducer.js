@@ -17,7 +17,7 @@ const reducer = (state = initialState,{type,payload}) => {
                 allCharacters: [...copyAllCharacters]
             } */
         case REMOVE_FAV:
-            return { ...state, myFavorites: payload, allCharacters: payload };
+            return { ...state, myFavorites: payload, /* allCharacters: payload  */};
             // antes del backend
             /* return {
                 ...state,
