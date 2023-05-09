@@ -22,8 +22,8 @@ function App() {
 
    const [access, setAccess] = useState(false);
    //const [accessError, setAccessError] = useState(false);
-   const EMAIL = "alejotoro94@hotmail.com";
-   const PASSWORD = "123porti";
+   /* const EMAIL = "alejotoro94@hotmail.com";
+   const PASSWORD = "123porti"; */
 
    
    const [characters,setCharacters] = useState([]); //!Creamos un hook se useState con un estado local llamado characters, donde se agregaran los personajes
@@ -78,11 +78,20 @@ function App() {
    }
 
    const login = (userData) => {
-      if(userData.email === EMAIL && userData.password === PASSWORD) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         localStorage.setItem('access',true);
+         access && navigate('/home');
+      });
+      // version antes de hacer el backend
+      /* if(userData.email === EMAIL && userData.password === PASSWORD) {
          localStorage.setItem('access',true);
          setAccess(true);
          navigate('/home');
-      }
+      } */
    }
    const logout = () => {
          localStorage.removeItem('access');
