@@ -49,19 +49,20 @@ function App() {
    //! lo dejamos comentando para entender lo que se esta haciendo!
  */
 
-   const onSearch = (id) => {
+   const onSearch = async (id) => {
       //console.log("id",id);
       //id = 1;
       //http://localhost:3001/rickandmorty/character/${id}
       //https://rickandmortyapi.com/api/character/${id} --- Api
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-         if (data.name) {
-            let repeat = characters.some( obj => obj.id === Number(id));
-            (characters.length === 0 || !repeat) ? setCharacters((oldChars) => [...oldChars, data]) : alert('Id repetido')
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });
+      try {
+         const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+            if (data.name) {
+               let repeat = characters.some( obj => obj.id === Number(id));
+               (characters.length === 0 || !repeat) ? setCharacters((oldChars) => [...oldChars, data]) : alert('Id repetido')
+            } 
+      } catch (error) {
+         alert('¡No hay personajes con este ID!');
+      }
    }
 
    const onSearchRandom = () => {
@@ -71,21 +72,25 @@ function App() {
 
    //!Creamos la función onClose para pasarle el id del personaje a quitar desde nuestro hook characters agregados
    const onClose = (id) => {
-      
+      console.log(id);
       setCharacters([
-         ...characters.filter( personajeEliminar => personajeEliminar.id !== Number(id))
+         ...characters.filter( personajeEliminar => personajeEliminar.id !== id)
       ])
    }
-
-   const login = (userData) => {
-      const { email, password } = userData;
+   
+   const login = async (userData) => {
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(data);
-         localStorage.setItem('access',true);
-         access && navigate('/home');
-      });
+      const { email, password } = userData;
+      try {
+         const {data} = await axios(URL + `?email=${email}&password=${password}`)
+            const { access } = data;
+            setAccess(data);
+            localStorage.setItem('access',true);
+            access && navigate('/home');
+         
+      } catch (error) {
+         console.log(error.message);
+      }
       // version antes de hacer el backend
       /* if(userData.email === EMAIL && userData.password === PASSWORD) {
          localStorage.setItem('access',true);
